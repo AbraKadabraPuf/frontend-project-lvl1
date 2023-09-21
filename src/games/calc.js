@@ -3,31 +3,28 @@ import gameEngine from '../index.js';
 
 const rule = ('What is the result of the expression?');
 
-const arr = ['*', '+', '-'];
-
-const checkOperator = (random1, random2, operator) => {
-  let answer = 0;
-
-  switch (operator) {
-    case '-':
-      answer = random1 - random2;
-      return answer;
-    case '+':
-      answer = random1 + random2;
-      return answer;
-    case '*':
-      answer = random1 * random2;
-      return answer;
-    default: throw new Error(`Unknown order state: '${operator}'!`);
-  }
-};
 const getQuestionAndAnswer = () => {
-  const randomOperatorIndex = randomNumber(0, 3);
-  const random1 = randomNumber(0, 10);
-  const random2 = randomNumber(0, 10);
-  const question = `${random1} ${arr[randomOperatorIndex]} ${random2}`;
-  const rightAnswer = checkOperator(random1, random2, arr[randomOperatorIndex]).toString();
-  return [question, rightAnswer];
+  const numberOne = randomNumber(1, 10);// вызов рандомного числа
+  const numberTwo = randomNumber(1, 10);// вызов второго рандомного числа
+  const resultPlus = numberOne + numberTwo;// сложение чисел
+  const resultMinus = numberOne - numberTwo;// разница чисел
+  const resultMultiply = numberOne * numberTwo;// умножение числе
+  let rightAnswer;
+  let questionNumber;
+  const generate = Math.floor(Math.random() * 3);
+
+  if (generate === 0) {
+    rightAnswer = resultPlus.toString();
+    questionNumber = `${numberOne} + ${numberTwo}`;
+    return [questionNumber, rightAnswer];
+  } if (generate === 1) {
+    rightAnswer = resultMinus.toString();
+    questionNumber = `${numberOne} - ${numberTwo}`;
+    return [questionNumber, rightAnswer];
+  }
+  rightAnswer = resultMultiply.toString();
+  questionNumber = `${numberOne} * ${numberTwo}`;
+  return [questionNumber, rightAnswer];
 };
 
 const startGame = () => {
