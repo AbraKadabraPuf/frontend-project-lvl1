@@ -6,15 +6,16 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/9bd62003ff11e10d421d/test_coverage)](https://codeclimate.com/github/AbraKadabraPuf/frontend-project-lvl1/test_coverage)
 
 Здравствуйте!
-Это учебный репозиторий первого проекта с курса Hexlet Frontend Developer.
+Это учебный репозиторий первого проекта из курса Hexlet Frontend Developer.
 Содержание: 5 игр.
 
 Установка:
-Для установки необходим node.js 13 версии и выше.
-Склонировать проект
-Выполнить make install
-Выполнить make publish
-Выполнить npm link
+-Установите node.js 13 версии и выше.
+-Склонируйте проект
+-Перейдите в корневую директорию с проектом
+-Выполните команду make install
+-Выполните команду npm publish --dry-run
+-Выполните команду npm link
 
 Игры:
 
